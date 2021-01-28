@@ -1,12 +1,6 @@
 import React, { useState, Fragment } from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
-import calculateWinner from "./src/js/helper.jsx";
-import Board from "./board";
-import PropTypes from "prop-types";
+import { calculateWinner } from "./helper.js";
+import { Board } from "./board.js";
 
 export const Home = () => {
 	const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -46,7 +40,7 @@ export const Home = () => {
 	return (
 		<Fragment>
 			<h1>Tic Tac Toe With React</h1>
-			<Board squares={history[stepNumber]} onClick={handleClick} />
+			<Board squares={history[stepNumber]} onUserClick={handleClick} />
 			<div className="info-wrapper">
 				<div>
 					<h3>History</h3>
@@ -56,8 +50,4 @@ export const Home = () => {
 			</div>
 		</Fragment>
 	);
-};
-
-Home.propTypes = {
-	squares: PropTypes.string
 };

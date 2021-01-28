@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: black;
+    background-color: #428092;
     color: white;
     font-family: "Roboto", sans-serif;
     display: flex;
@@ -40,12 +40,12 @@ h1{
     outline: none;
 }
 
-.x{
-    color: red;
+.squares {
+    color: whitesmoke;
 }
 
 .O{
-    color: green;
+    color: #68A0B0;
 }
 
 .info-wrapper{
@@ -66,7 +66,6 @@ li{
     color: white;
     border: none;
     outline: none;
-    cursor: pointer;
     padding: 0.5rem;
     margin: 0.5rem 1rem;
 }
