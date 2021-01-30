@@ -1,26 +1,24 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap');
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
 body{
     background-color: #428092;
     color: white;
     font-family: "Roboto", sans-serif;
     display: flex;
-    // align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 2rem;
 }
-
 h1{
+    font-family: 'Bitter', serif;
     margin: 2rem;
 }
-
 .board{
     border: 1rem solid #ff652f;
     background: #ff652f;
@@ -30,37 +28,31 @@ h1{
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     gap: 1rem;
 }
-
 .squares{
     background: #272727;
     border: none;
     font-size: 5rem;
-    // font-weight: 800;
     cursor: pointer;
     outline: none;
 }
-
 .squares {
     color: whitesmoke;
 }
-
 .O{
     color: #68A0B0;
 }
-
 .info-wrapper{
     display: flex;
     justify-content: space-between;
 }
-
 h3{
     padding: 1rem;
+    font-family: 'Bitter', serif;
 }
-
 li{
     list-style: none;
+    font-family: 'Bitter', serif;
 }
-
 .info-wrapper button{
     background: #272727;
     color: white;
