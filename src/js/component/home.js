@@ -3,30 +3,42 @@ import { calculateWinner } from "./helper.js";
 import { Board } from "./board.js";
 
 export const Home = () => {
+	// Create an array with 9 positions == null
 	const [history, setHistory] = useState([Array(9).fill(null)]);
+	// Steps until this point
 	const [stepNumber, setStepNumber] = useState(0);
+	// When it's TRUE it's X's turn and when it's FALSE it's O's turn
 	const [xIsNext, setXIsNext] = useState(true);
+	// Winner algorithm
 	const winner = calculateWinner(history[stepNumber]);
+	// String inside the squares
 	const xO = xIsNext ? "X" : "O";
 
+	// Function for every click
 	const handleClick = i => {
+		// Add new array for history
 		const historyPoint = history.slice(0, stepNumber + 1);
+		// Store the array
 		const current = historyPoint[stepNumber];
+		// Spread Operator
 		const squares = [...current];
-		// return if won or occupied
+		// Return if won or occupied
 		if (winner || squares[i]) return;
-		// select square
+		// Select square
 		squares[i] = xO;
 		setHistory([...historyPoint, squares]);
 		setStepNumber(historyPoint.length);
 		setXIsNext(!xIsNext);
 	};
 
+	// Go back to the step you want
 	const jumpTo = step => {
+		// Store turns
 		setStepNumber(step);
 		setXIsNext(step % 2 === 0);
 	};
 
+	// Create step buttons
 	const renderMoves = () =>
 		history.map((_step, move) => {
 			const destination = move ? `Go to move#${move}` : "Go to start";
